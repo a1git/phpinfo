@@ -1,0 +1,11 @@
+ Options -Indexes +FollowSymLinks
+ AddDefaultCharset UTF-8
+ RewriteEngine on
+ # RewriteBase "/"
+ # AccepthPathInfo on
+ RewriteCond "%{REQUEST_URI}" "!^(robots\.txt|favicon\.ico|css\/styles\.css)$"
+ RewriteCond "%{REQUEST_URI}" "!^index\.php"
+ RewriteCond "%{REQUEST_URI}" "!^css/(.*)\.css$"
+ RewriteCond "%{REQUEST_URI}" "!^images/(.*)\.(jpg|png|jpeg|gif)$"
+ RewriteCond "%{REQUEST_URI}" "!^js/(.*)\.js$"
+ RewriteRule ^(.*)$ /index.php/$1 [L]
